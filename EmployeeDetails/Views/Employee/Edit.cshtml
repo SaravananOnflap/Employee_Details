@@ -1,0 +1,106 @@
+﻿@model EmployeeDetails.Models.Employee
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container">
+        <h4>Employee Details</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.EmpID)
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Employee Name</label>
+                    @Html.EditorFor(model => model.EmployeeName, new { htmlAttributes = new { @class = "form-control" , @id = "EmployeeName", autocomplete = "off" } })
+                    @Html.ValidationMessageFor(model => model.EmployeeName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Phone Number</label>
+                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", @id = "PhoneNumber", autocomplete = "off" } })
+                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", @id = "Description", autocomplete = "off" } })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Email ID</label>
+                    @Html.EditorFor(model => model.EmailID, new { htmlAttributes = new { @class = "form-control", @id = "EmailID", autocomplete = "off" } })
+                    @Html.ValidationMessageFor(model => model.EmailID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">User ID</label>
+                    @Html.EditorFor(model => model.UserID, new { htmlAttributes = new { @class = "form-control", @id = "UserID", autocomplete = "off" } })
+                    @Html.ValidationMessageFor(model => model.UserID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Password</label>
+                    @Html.EditorFor(model => model.Pwd, new { htmlAttributes = new { @class = "form-control", type = "password", @id = "Pwd",  autocomplete = "off" } })
+                    @Html.ValidationMessageFor(model => model.Pwd, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label class="control-label">Employee Rank</label>
+                    @Html.DropDownListFor(model => model.EmpRank, new SelectList(new[]
+                                          {
+                                              new SelectListItem { Text = "Manager", Value = "Manager" },
+                                              new SelectListItem { Text = "Accountant", Value = "Accountant" },
+                                              new SelectListItem { Text = "Staff", Value = "Staff" }
+                                          }, "Value", "Text", Model.EmpRank), "Select Rank", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.EmpRank, "", new { @class = "text-danger", @id = "EmpRank" })
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="col-md-12 text-right">
+                    <a href="@Url.Action("Index", "Employee")" class="btn btn-primary">Close</a>
+                    <button type="button" class="btn btn-primary" onclick="EditEmployee('@Model.EmpID')">Save</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/CRUD/CRUD.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+
+}
