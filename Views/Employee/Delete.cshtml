@@ -1,0 +1,49 @@
+﻿@model EmployeeDetails.Models.Employee
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Employee Details</h4>
+            <hr />
+            <div class="col-md-6">
+                <strong>Employee Name:</strong> @Html.DisplayFor(model => model.EmployeeName)
+            </div>
+            <div class="col-md-6">
+                <strong>Phone Number:</strong> @Html.DisplayFor(model => model.PhoneNumber)
+            </div>
+            <div class="col-md-6">
+                <strong>Description:</strong> @Html.DisplayFor(model => model.Description)
+            </div>
+            <div class="col-md-6">
+                <strong>Employee Rank:</strong> @Html.DisplayFor(model => model.EmpRank)
+            </div>
+            <div class="col-md-6">
+                <strong>Email ID:</strong> @Html.DisplayFor(model => model.EmailID)
+            </div>
+            <div class="col-md-6">
+                <strong>User ID:</strong> @Html.DisplayFor(model => model.UserID)
+            </div>
+            <div class="col-md-6">
+                <strong>Password:</strong> @Html.DisplayFor(model => model.Pwd)
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+        </div>
+    </div>
+</div>

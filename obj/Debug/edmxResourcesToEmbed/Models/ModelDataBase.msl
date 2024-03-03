@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EmployeesPersonalDetailsModelStoreContainer" CdmEntityContainer="EmployeesPersonalDetailsEntities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="EmployeesPersonalDetailsModel.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="EmployeesPersonalDetailsModel.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EmpRank" ColumnName="EmpRank" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_EmployeeDetails">
+      <EntityTypeMapping TypeName="EmployeesPersonalDetailsModel.tbl_EmployeeDetails">
+        <MappingFragment StoreEntitySet="tbl_EmployeeDetails">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EmpRank" ColumnName="EmpRank" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Demo" FunctionName="EmployeesPersonalDetailsModel.Store.Demo" />
+    <FunctionImportMapping FunctionImportName="LoginEmployee" FunctionName="EmployeesPersonalDetailsModel.Store.LoginEmployee" />
+    <FunctionImportMapping FunctionImportName="sp_EmpInsertUpdate" FunctionName="EmployeesPersonalDetailsModel.Store.sp_EmpInsertUpdate" />
+    <FunctionImportMapping FunctionImportName="sp_EmployeeDetail" FunctionName="EmployeesPersonalDetailsModel.Store.sp_EmployeeDetail" />
+    <FunctionImportMapping FunctionImportName="sp_fetchtbl_EmployeeDetails" FunctionName="EmployeesPersonalDetailsModel.Store.sp_fetchtbl_EmployeeDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EmployeesPersonalDetailsModel.sp_fetchtbl_EmployeeDetails_Result">
+          <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="EmpRank" ColumnName="EmpRank" />
+          <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
